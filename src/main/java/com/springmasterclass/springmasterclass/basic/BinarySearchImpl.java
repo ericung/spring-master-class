@@ -1,4 +1,4 @@
-package com.springmasterclass.springmasterclass;
+package com.springmasterclass.springmasterclass.basic;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
