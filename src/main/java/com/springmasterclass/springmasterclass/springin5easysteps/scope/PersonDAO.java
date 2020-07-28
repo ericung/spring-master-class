@@ -1,4 +1,4 @@
-package com.springmasterclass.springmasterclass.scope;
+package com.springmasterclass.springmasterclass.springin5easysteps.scope;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

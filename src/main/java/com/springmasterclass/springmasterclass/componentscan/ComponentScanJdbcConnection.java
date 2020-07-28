@@ -1,4 +1,4 @@
-package com.springmasterclass.springmasterclass.scope;
+package com.springmasterclass.springmasterclass.componentscan;
 
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.ScopedProxyMode;
@@ -8,9 +8,9 @@ import org.springframework.context.annotation.Scope;
 @Component
 @Scope(value=ConfigurableBeanFactory.SCOPE_PROTOTYPE, 
 		proxyMode = ScopedProxyMode.TARGET_CLASS)
-public class JdbcConnection {
+public class ComponentScanJdbcConnection {
 
-	public JdbcConnection() {
+	public ComponentScanJdbcConnection() {
 		System.out.println("JDBC Connection");
 	}
 }

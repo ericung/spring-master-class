@@ -1,10 +1,10 @@
-package com.springmasterclass.springmasterclass;
+package com.springmasterclass.springmasterclass.springin5easysteps;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import com.springmasterclass.springmasterclass.basic.BinarySearchImpl;
+import com.springmasterclass.springmasterclass.springin5easysteps.basic.BinarySearchImpl;
 
 @SpringBootApplication
 public class SpringMasterClassApplication {

@@ -1,4 +1,4 @@
-package com.springmasterclass.springmasterclass;
+package com.springmasterclass.springmasterclass.springin5easysteps;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,7 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import com.springmasterclass.springmasterclass.scope.PersonDAO;
+import com.springmasterclass.springmasterclass.springin5easysteps.scope.PersonDAO;
 
 @SpringBootApplication
 public class SpringMasterClassScopeApplication {
