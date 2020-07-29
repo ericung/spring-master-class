@@ -9,24 +9,22 @@ import org.springframework.context.annotation.ComponentScan;
 
 import com.springmasterclass.springmasterclass.componentscan.ComponentDAO;
 import com.springmasterclass.springmasterclass.springin5easysteps.basic.BinarySearchImpl;
+import com.springmasterclass.springmasterclass.springin5easysteps.cdi.SomeCdiBusiness;
 
 @SpringBootApplication
-@ComponentScan("com.springmasterclass.springmasterclass.componentscan")
-public class SpringMasterClassComponentScanClassApplication {
+public class SpringMasterClassCdiApplication {
 
-	private static Logger LOGGER = LoggerFactory.getLogger(SpringMasterClassComponentScanClassApplication.class); 
+	private static Logger LOGGER = LoggerFactory.getLogger(SpringMasterClassCdiApplication.class); 
 	
 	public static void main(String[] args) {
 		// BinarySearchImpl binarySearch =
 		// new BinarySearchImpl(new QuickSortAlgorithm());
 		// Application Context
-		ApplicationContext applicationContext = 
-				SpringApplication.run(SpringMasterClassComponentScanClassApplication.class, args);
+		ApplicationContext applicationContext = SpringApplication.run(SpringMasterClassCdiApplication.class, args);
 		
-		ComponentDAO componentDAO = 
-				applicationContext.getBean(ComponentDAO.class);
+		SomeCdiBusiness business = applicationContext.getBean(SomeCdiBusiness.class);
 		
-		LOGGER.info("{}", componentDAO);
+		LOGGER.info("{} dao-{}", business, business.getSomeCdiDao());
 	}
 
 }
