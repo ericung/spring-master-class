@@ -15,21 +15,22 @@ public class SpringMasterClassApplication {
 		// BinarySearchImpl binarySearch =
 		// new BinarySearchImpl(new QuickSortAlgorithm());
 		// Application Context
-		ApplicationContext applicationContext =
-				new AnnotationConfigApplicationContext(SpringMasterClassApplication.class);
+		try (AnnotationConfigApplicationContext applicationContext =
+				new AnnotationConfigApplicationContext(SpringMasterClassApplication.class)){
 		
-		BinarySearchImpl binarySearch = 
-				applicationContext.getBean(BinarySearchImpl.class);
-	
-		BinarySearchImpl binarySearch1 = 
-				applicationContext.getBean(BinarySearchImpl.class);
-	
-		System.out.println(binarySearch);
-		System.out.println(binarySearch1);
+			BinarySearchImpl binarySearch = 
+					applicationContext.getBean(BinarySearchImpl.class);
 		
-		int result = 
-				binarySearch.binarySearch(new int[] { 12, 4, 6 }, 3);
-		System.out.println(result);
+			BinarySearchImpl binarySearch1 = 
+					applicationContext.getBean(BinarySearchImpl.class);
+		
+			System.out.println(binarySearch);
+			System.out.println(binarySearch1);
+			
+			int result = 
+					binarySearch.binarySearch(new int[] { 12, 4, 6 }, 3);
+			System.out.println(result);
+		}
 	}
 
 }

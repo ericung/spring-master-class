@@ -19,11 +19,12 @@ public class SpringMasterClassCdiApplication {
 		// BinarySearchImpl binarySearch =
 		// new BinarySearchImpl(new QuickSortAlgorithm());
 		// Application Context
-		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringMasterClassApplication.class);
-		
-		SomeCdiBusiness business = applicationContext.getBean(SomeCdiBusiness.class);
-		
-		LOGGER.info("{} dao-{}", business, business.getSomeCdiDao());
+		try(AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringMasterClassApplication.class))
+		{
+			SomeCdiBusiness business = applicationContext.getBean(SomeCdiBusiness.class);
+			
+			LOGGER.info("{} dao-{}", business, business.getSomeCdiDao());
+		}
 	}
 
 }

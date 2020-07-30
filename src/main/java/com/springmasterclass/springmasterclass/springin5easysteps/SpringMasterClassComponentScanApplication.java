@@ -19,14 +19,14 @@ public class SpringMasterClassComponentScanApplication {
 		// BinarySearchImpl binarySearch =
 		// new BinarySearchImpl(new QuickSortAlgorithm());
 		// Application Context
-		ApplicationContext applicationContext = 
-				new AnnotationConfigApplicationContext(SpringMasterClassApplication.class);
+		try(AnnotationConfigApplicationContext applicationContext = 
+				new AnnotationConfigApplicationContext(SpringMasterClassApplication.class)) {
 		
-		ComponentDAO componentDAO = 
-				applicationContext.getBean(ComponentDAO.class);
-		
-		LOGGER.info("{}", componentDAO);
-		
+			ComponentDAO componentDAO = 
+					applicationContext.getBean(ComponentDAO.class);
+			
+			LOGGER.info("{}", componentDAO);
+		}
 	}
 
 }

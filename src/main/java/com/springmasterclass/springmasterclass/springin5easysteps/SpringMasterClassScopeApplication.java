@@ -18,20 +18,21 @@ public class SpringMasterClassScopeApplication {
 	
 	public static void main(String[] args) {
 
-		ApplicationContext applicationContext = 
-				new AnnotationConfigApplicationContext(SpringMasterClassApplication.class);
+		try(AnnotationConfigApplicationContext applicationContext = 
+				new AnnotationConfigApplicationContext(SpringMasterClassApplication.class)) {
 		
-		PersonDAO personDao = 
-				applicationContext.getBean(PersonDAO.class);
-		
-		PersonDAO personDao2 = 
-				applicationContext.getBean(PersonDAO.class);
-		
-		LOGGER.info("{}", personDao);
-		LOGGER.info("{}", personDao.getJdbcConnection());
-		
-		LOGGER.info("{}", personDao2);
-		LOGGER.info("{}", personDao.getJdbcConnection());
+			PersonDAO personDao = 
+					applicationContext.getBean(PersonDAO.class);
+			
+			PersonDAO personDao2 = 
+					applicationContext.getBean(PersonDAO.class);
+			
+			LOGGER.info("{}", personDao);
+			LOGGER.info("{}", personDao.getJdbcConnection());
+			
+			LOGGER.info("{}", personDao2);
+			LOGGER.info("{}", personDao.getJdbcConnection());
+		}
 		
 	}
 }
