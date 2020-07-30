@@ -2,16 +2,15 @@ package com.springmasterclass.springmasterclass.springin5easysteps;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-import com.springmasterclass.springmasterclass.componentscan.ComponentDAO;
-import com.springmasterclass.springmasterclass.springin5easysteps.basic.BinarySearchImpl;
 import com.springmasterclass.springmasterclass.springin5easysteps.cdi.SomeCdiBusiness;
 
-@SpringBootApplication
+@Configuration
+@ComponentScan
 public class SpringMasterClassCdiApplication {
 
 	private static Logger LOGGER = LoggerFactory.getLogger(SpringMasterClassCdiApplication.class); 
@@ -20,7 +19,7 @@ public class SpringMasterClassCdiApplication {
 		// BinarySearchImpl binarySearch =
 		// new BinarySearchImpl(new QuickSortAlgorithm());
 		// Application Context
-		ApplicationContext applicationContext = SpringApplication.run(SpringMasterClassCdiApplication.class, args);
+		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringMasterClassApplication.class);
 		
 		SomeCdiBusiness business = applicationContext.getBean(SomeCdiBusiness.class);
 		

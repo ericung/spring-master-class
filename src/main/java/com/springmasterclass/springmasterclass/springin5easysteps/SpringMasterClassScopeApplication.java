@@ -2,13 +2,15 @@ package com.springmasterclass.springmasterclass.springin5easysteps;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 import com.springmasterclass.springmasterclass.springin5easysteps.scope.PersonDAO;
 
-@SpringBootApplication
+@Configuration
+@ComponentScan
 public class SpringMasterClassScopeApplication {
 	
 	private static Logger LOGGER = 
@@ -17,7 +19,7 @@ public class SpringMasterClassScopeApplication {
 	public static void main(String[] args) {
 
 		ApplicationContext applicationContext = 
-				SpringApplication.run(SpringMasterClassScopeApplication.class, args);
+				new AnnotationConfigApplicationContext(SpringMasterClassApplication.class);
 		
 		PersonDAO personDao = 
 				applicationContext.getBean(PersonDAO.class);
