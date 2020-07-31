@@ -9,8 +9,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.springmasterclass.springmasterclass.springin5easysteps.basic.BinarySearchImpl;
 import com.springmasterclass.springmasterclass.springin5easysteps.xml.XmlPersonDAO;
 
-@Configuration
-@ComponentScan
 public class SpringMasterClassXmlContextApplication {
 
 	public static void main(String[] args) {
